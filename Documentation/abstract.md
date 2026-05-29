@@ -18,7 +18,7 @@ $$
 C(h)=C_{air}(L-h)+C_{water}h
 $$
 
-where (L) represents total probe length, (h) represents submerged length, and (C_{air}) and (C_{water}) represent distributed capacitance per unit length in air and water respectively. Because the dielectric constant of water greatly exceeds that of air, immersion produces a measurable increase in electric field coupling between probes.
+where $(L)$ represents total probe length, $(h)$ represents submerged length, and $(C_{air})$ and $(C_{water})$ represent distributed capacitance per unit length in air and water respectively. Because the dielectric constant of water greatly exceeds that of air, immersion produces a measurable increase in electric field coupling between probes.
 
 The resulting displacement current is governed by
 
@@ -26,7 +26,7 @@ $$
 I_C=C\frac{dV}{dt}
 $$
 
-where (C) is the effective probe capacitance and (\frac{dV}{dt}) is the excitation edge rate produced by the PWM waveform. The measurement network converts this displacement current into a voltage response approximately described by
+where $(C)$ is the effective probe capacitance and $(\frac{dV}{dt})$ is the excitation edge rate produced by the PWM waveform. The measurement network converts this displacement current into a voltage response approximately described by
 
 $$
 V_{ADC}\approx RC\frac{dV}{dt}

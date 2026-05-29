@@ -96,7 +96,7 @@ Two identical probes are mounted in parallel vertical alignment with a fixed cen
 
 The system operates through dielectric modulation of the electric field between probe electrodes. Effective capacitance increases with immersed probe length due to the permittivity contrast between air and water.
 
-C(h) increases approximately linearly with submersion depth h.
+$C(h)$ increases approximately linearly with submersion depth $h$.
 
 The excitation waveform produces displacement current according to:
 

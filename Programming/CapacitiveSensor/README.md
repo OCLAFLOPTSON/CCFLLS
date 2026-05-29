@@ -75,8 +75,6 @@ Behavior:
 - Initializes PWM at 50 kHz
 - Sets 50% duty cycle (32768 / 65535)
 - Initializes ADC input
-- Sets internal value storage (val)
-- Initializes interrupt flag for async control
 
 ---
 
@@ -128,53 +126,7 @@ Process:
 
 ---
 
-### _aread()
-
-Async internal version of read()
-
-- Fixed 1000 samples
-- Returns averaged float value
-- Used by run_async()
-
----
-
-### run_async()
-
-Continuous background sampling loop.
-
-Behavior:
-- Loops until stop_async() is called
-- On each cycle:
-  - resets sensor state
-  - updates self.val with new reading
-
-Output:
-- self.val is continuously updated with latest measurement
-
----
-
-### stop_async()
-
-Stops async loop execution.
-
-- Sets interrupt flag to terminate run_async()
-
----
-
-## Example Usage
-
-### Blocking Read Example
-
-sensor = CapacitiveSensor(pwm=15, adc=26)
-
-value = sensor.read(samples=1000)
-print(value)
-
----
-
 ### Example Usage
-
-#### Blocking
 
 ``` python
 from CapacitiveSensor import CapacitiveSensor
@@ -203,24 +155,6 @@ while True:
         relay.value(1)
     else:
         relay.value(0)
-```
-
-#### Async
-
-``` python
-import asyncio
-from CapacitiveSensor import CapacitiveSensor
-
-sensor = CapacitiveSensor(pwm=16, adc=26)
-
-async def main():
-    asyncio.create_task(sensor.run_async())
-
-    while True:
-        print(sensor.val)
-        await asyncio.sleep(0.1)
-
-asyncio.run(main())
 ```
 
 ---
